@@ -8,33 +8,40 @@ var {
 	TouchableOpacity,
 	ToastAndroid,
 	AppRegistry,
-	Navigator
+	Navigator,
+	TextInput
 } = React;
 
-class SignUpFB extends React.Component{
+const styles = require('../../../styles.js')
+
+class HaveAC extends React.Component{
 
 backToMenu()
 	{
 		//var navigator = this.props.navigator;
 		this.props.navigator.pop({
-        	id: 'Main',
+        id: 'Main',
     	});
 	}
 
 	render(){
 		return (
 			<Image source={
-				require('./Images/Man_In_Machine.jpg')} 
+				require('./Images/Man_In_Machine.jpg')}
 				style={styles.container}
 				resizeMode={'stretch'}>
-				
+
+				 {/*<TextInput style={{height: 40, borderColor: 'gray', borderWidth: 1}
+					} onChangeText={(text) => this.setState({text})
+					} value={this.state.text} />*/}
+
 				<Image source={
 					require('./Images/button1.png')}
 					style={styles.button}
 					resizeMode={'stretch'}>
-				
+
 					<Text style={styles.buttonText}>
-						SIGN UP WITH FACEBOOK!
+						SIGN UP USING FACEBOOK!
 					</Text>
 				</Image>
 
@@ -54,35 +61,6 @@ backToMenu()
 	}
 }
 
+AppRegistry.registerComponent('HaveAC', () => HaveAC);
 
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		justifyContent: 'center',
-		alignItems: 'center',
-    // remove width and height to override fixed static size
-	    width: null,
-	    height: null,
-	},
-	welcome: {
-		fontSize: 20,
-		textAlign: 'center',
-		margin: 10,
-	},
-	buttonText: {
-		//font: italic bold 12px/30px Georgia, serif;
-		textAlign: 'center',
-		color: '#FFFFFF',
-		marginTop: 15,
-	},
-	button: {
-		width: 250,
-		height: 50,
-		backgroundColor: 'transparent',
-		marginBottom: 20,
-	}
-});
-
-AppRegistry.registerComponent('SignUpFB', () => SignUpFB);
-
-module.exports = SignUpFB;
+module.exports = HaveAC;

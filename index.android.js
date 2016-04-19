@@ -4,11 +4,11 @@
  */
 var AnimationPage = require('./App/Components/Animation_Testing/Playground');
 var Main = require('./App/Components/Sproose_TestApp/Main');
-var Splash = require('./App/Components/Sproose_TestApp/Splash');
 var SplashPage = require('./App/Components/Sproose_TestApp/SplashPage');
 var SignUpFB = require('./App/Components/Sproose_TestApp/SignUpFB');
 var HaveAC = require('./App/Components/Sproose_TestApp/HaveAC');
 var SignEmail = require('./App/Components/Sproose_TestApp/SignEmail');
+var Buy_View = require('./App/Components/Sproose_TestApp/Buy_View');
 
 import React, {
   AppRegistry,
@@ -22,12 +22,14 @@ import React, {
   View
 } from 'react-native';
 
+//const styles = require('./styles.js')
+
 class MyFirstRNProject extends Component {
 
   render() {
     return (
      <Navigator
-        initialRoute={{id: 'SplashPage', name: 'Index'}}
+        initialRoute={{id: 'Buy_View', name: 'Index'}}
         renderScene={this.renderScene.bind(this)}
         configureScene={(route) => {
           if (route.sceneConfig) {
@@ -43,6 +45,12 @@ class MyFirstRNProject extends Component {
      if (routeId === 'SplashPage') {
       return (
         <SplashPage
+          navigator={navigator} />
+      );
+    }
+        if (routeId === 'Buy_View') {
+      return (
+        <Buy_View
           navigator={navigator} />
       );
     }
@@ -76,12 +84,6 @@ class MyFirstRNProject extends Component {
           navigator={navigator} />
       );
     }
-     if (routeId === 'Splash') {
-      return (
-        <Splash
-          navigator={navigator} />
-      );
-    }
       if (routeId === 'NoNavigatorPage') {
       return (
         <NoNavigatorPage
@@ -95,7 +97,7 @@ class MyFirstRNProject extends Component {
       <View style={{flex: 1, alignItems: 'stretch', justifyContent: 'center'}}>
         <TouchableOpacity style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}
             onPress={() => navigator.pop()}>
-          <Text style={{color: 'red', fontWeight: 'bold'}}>请在 index.js 的 renderScene 中配置这个页面的路由</Text>
+          <Text style={{color: 'red', fontWeight: 'bold'}}>no scene to render index.android.js</Text>
         </TouchableOpacity>
       </View>
     );
