@@ -172,14 +172,95 @@ _addItem() {
               </Text>
             </TouchableOpacity>
         </ScrollView>
-        <ScrollView contentContainerStyle={styles.listview}
-        style={[styles.listview]}>
 
-          <ListView
-          dataSource={this.state.dataSource}
-          renderRow={this._renderItem.bind(this)}
-          style={styles.listview}/>
+        <ScrollView
 
+          ref={(ScrollView) => {_scrollView = ScrollView; }}
+          automaticallyAdjustContentInsets={false}
+          scrollEventThrottle={200}
+          style={styles.scrollView}>
+
+          <TouchableOpacity
+            style={styles.scrollButton}
+            onPress={this.bSignFacebook.bind(this)}>
+
+            <Text style={styles.scrollText}>
+              DRY CLEANING
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.scrollButton}
+            onPress={this.bSignFacebook.bind(this)}>
+
+            <Text style={styles.scrollText}>
+              HOUSEHOLD
+            </Text>
+          </TouchableOpacity>
+
+
+          <TouchableOpacity
+            style={styles.scrollButton}
+            onPress={this.bSignFacebook.bind(this)}>
+
+            <Text style={styles.scrollText}>
+              OTHER
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.scrollButton}
+            onPress={this.bSignFacebook.bind(this)}>
+
+            <Text style={styles.scrollText}>
+              OTHER
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.scrollButton}
+            onPress={this.bSignFacebook.bind(this)}>
+
+            <Text style={styles.scrollText}>
+              OTHER
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.scrollButton}
+            onPress={this.bSignFacebook.bind(this)}>
+
+            <Text style={styles.scrollText}>
+              OTHER
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.scrollButton}
+            onPress={this.bSignFacebook.bind(this)}>
+
+            <Text style={styles.scrollText}>
+              OTHER
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.scrollButton}
+            onPress={this.bSignFacebook.bind(this)}>
+
+            <Text style={styles.scrollText}>
+              OTHER
+            </Text>
+          </TouchableOpacity>
+
+          <TouchableOpacity
+            style={styles.scrollButton}
+            onPress={this.bSignFacebook.bind(this)}>
+
+            <Text style={styles.scrollText}>
+              OTHER
+            </Text>
+          </TouchableOpacity>
         </ScrollView>
       </View>
     );
