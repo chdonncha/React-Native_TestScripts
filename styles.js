@@ -1,5 +1,12 @@
 const React = require('react-native')
-const {StyleSheet} = React
+const {
+	StyleSheet,
+	Dimensions
+} = React
+
+var SCREEN_WIDTH = Dimensions.get('window').width;
+var SCREEN_HEIGHT = Dimensions.get('window').height;
+
 const constants = {
   actionColor: '#24CE84'
 };
@@ -30,7 +37,7 @@ const styles = StyleSheet.create({
 		paddingBottom: 16,
 	},
 	liContainer: {
-		flex: 2,
+		flex: 1,
 	},
 	liText: {
 		color: '#333',
@@ -116,6 +123,35 @@ const styles = StyleSheet.create({
 	center: {
 		textAlign: 'center',
 	},
+	contentContainer: { // for horizontalScrollView
+		//paddingVertical: 20,
+		flex: 1,
+	},
+	 horizontalScrollView: {
+		 height: 70,
+	},
+	 scrollView: {
+		 backgroundColor: '#6A85B1',
+		 height: 500,
+	},
+	 scrollButton: {
+		 margin: 3,
+		 padding: 5,
+		 alignItems: 'center',
+		 backgroundColor: '#eaeaea',
+		 borderRadius: 3,
+		 width: 150
+	},
+	scrollHorizontalText: {
+		fontSize: 20,
+		color: '#888888',
+		top: 20,
+		height: 40,
+	},
+	verticalScrollView: {
+		width: SCREEN_WIDTH,
+		height: 250
+	}
 })
 
 module.exports = styles
