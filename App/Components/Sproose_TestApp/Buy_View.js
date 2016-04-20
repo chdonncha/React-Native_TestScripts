@@ -123,97 +123,69 @@ _addItem() {
       });
   }
 
-	render() {
+  render() {
     return (
-      <View style={styles.listContainer}>
+      <View>
         <StatusBar title="SPROOSE" />
-        <ScrollView
+        <ScrollView contentContainerStyle={styles.contentContainer}
 
-        ref={(scrollView) => { _scrollView = scrollView; }}
+          ref={(ScrollView) => {_scrollView = ScrollView; }}
+          automaticallyAdjustContentInsets={false}
+          horizontal={true}
+          showsHorizontalScrollIndicator={false}
+          style={[styles.scrollView, styles.horizontalScrollView]}>
 
-        horizontal={true}
-        style={[styles.scrollView,
-        styles.horizontalScrollView]}>
+            <TouchableOpacity
+              style={styles.scrollButton}
+              onPress={this.bSignFacebook.bind(this)}>
 
-        <TouchableOpacity onPress={this.bSignFacebook.bind(this)}>
+              <Text style={styles.scrollText}>
+                SERVICE WASH
+              </Text>
 
-        <Image source={
-          require('./Images/button1.png')}
-          style={styles.button}
-          resizeMode={'stretch'}>
+            </TouchableOpacity>
 
-            <Text style={styles.buttonText}>
-                  BUSSINESS CLOTHES
-            </Text>
-          </Image>
-      </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.scrollButton}
+              onPress={this.bSignFacebook.bind(this)}>
 
-      <TouchableOpacity onPress={this.bSignFacebook.bind(this)}>
-        <Image source={
-          require('./Images/button1.png')}
-          style={styles.button}
-          resizeMode={'stretch'}>
+              <Text style={styles.scrollText}>
+                DRY CLEANING
+              </Text>
+            </TouchableOpacity>
 
-          <Text style={styles.buttonText}>
-                HOMEWARE
-          </Text>
-        </Image>
-    </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.scrollButton}
+              onPress={this.bSignFacebook.bind(this)}>
 
-    <TouchableOpacity onPress={this.bSignFacebook.bind(this)}>
-      <Image source={
-        require('./Images/button1.png')}
-        style={styles.button}
-        resizeMode={'stretch'}>
+              <Text style={styles.scrollText}>
+                HOUSEHOLD
+              </Text>
+            </TouchableOpacity>
 
-        <Text style={styles.buttonText}>
-              OTHER STUFF
-        </Text>
-      </Image>
-  </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.scrollButton}
+              onPress={this.bSignFacebook.bind(this)}>
 
+              <Text style={styles.scrollText}>
+                OTHER
+              </Text>
+            </TouchableOpacity>
         </ScrollView>
-      <ListView
+        <ScrollView contentContainerStyle={styles.listview}
+        style={[styles.listview]}>
+
+          <ListView
           dataSource={this.state.dataSource}
           renderRow={this._renderItem.bind(this)}
           style={styles.listview}/>
-        {//<ActionButton title="Add" onPress={this._addItem.bind(this)} />
-      }
+
+        </ScrollView>
       </View>
     );
   }
 }
 
-		 /*	<Image source={
-				require('./Images/Man_In_Machine.jpg')}
-				style={styles.container}
-				resizeMode={'stretch'}>
-
-				<Image source={
-					require('./Images/button1.png')}
-					style={styles.button}
-					resizeMode={'stretch'}>
-
-					<Text style={styles.buttonText}>
-						This is the buy menu
-					</Text>
-				</Image>
-
-				<TouchableOpacity onPress={this.backToMenu.bind(this)}>
-					<Image source={
-						require('./Images/button1.png')}
-						style={styles.button}
-						resizeMode={'stretch'}>
-
-						<Text style={styles.buttonText}>
-		    				BACK TO MENU
-		    			</Text>
-					</Image>
-				</TouchableOpacity>
-			</Image>
-		);
-	}
-}*/
 
 AppRegistry.registerComponent('Buy_View', () => Buy_View);
 
